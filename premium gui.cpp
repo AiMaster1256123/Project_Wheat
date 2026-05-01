@@ -4841,6 +4841,7 @@ void RenderApp() {
             ImGui::Separator();
             ImGui::Spacing();
             ImGui::TextDisabled(Tr("Adjust these values if your emulator is lagging or running too fast."));
+            ImGui::TextDisabled(Tr("If the bot glitches and marks cycles complete too early, slow down the timing below. If it still happens, tap the screen edges, zoom out, or reload the account."));
             bool timingChanged = false;
             timingChanged |= ImGui::SliderInt(Tr("Game Load Wait (Seconds)"), &g_Intervals.gameLoadWait, 5, 45);
             timingChanged |= ImGui::SliderInt(Tr("Harvest Cooldown (ms)"), &g_Intervals.afterHarvestWait, 300, 5000);
