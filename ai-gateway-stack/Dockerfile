@@ -6,8 +6,7 @@ RUN python -c "import yaml,sys; yaml.safe_load(open('litellm_config.yaml')); pri
 
 FROM ghcr.io/berriai/litellm:v1.83.3-stable
 COPY --from=validator /validate/litellm_config.yaml /app/config.yaml
-RUN id litellm 2>/dev/null || useradd --system --no-create-home --uid 1001 litellm
-USER litellm
+USER 1001
 EXPOSE 4000
 HEALTHCHECK --interval=30s --timeout=10s --start-period=20s --retries=3 \
   CMD python -c "import urllib.request,sys; urllib.request.urlopen('http://localhost:4000/health/liveliness') or sys.exit(1)"
