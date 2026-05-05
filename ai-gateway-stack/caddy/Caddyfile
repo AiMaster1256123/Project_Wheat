@@ -1,0 +1,13 @@
+:8081 {
+  basicauth {
+    monitoradmin $2a$14$QF/BIxiUDz/bNSmPmn0OPe9O8z8n5/8GwvlteUZlU/0Ps4TTanH8u
+  }
+  reverse_proxy grafana:3001
+}
+
+:8082 {
+  basicauth {
+    monitoradmin $2a$14$QF/BIxiUDz/bNSmPmn0OPe9O8z8n5/8GwvlteUZlU/0Ps4TTanH8u
+  }
+  reverse_proxy prometheus:9090
+}
