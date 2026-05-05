@@ -28,7 +28,7 @@ permissions:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository_owner }}/ai-gateway-stack
+  IMAGE_NAME: aimaster1256123/ai-gateway-stack
 
 jobs:
   build-and-push:
